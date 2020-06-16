@@ -17,23 +17,23 @@ public class OperationsController {
 	}
 	
 	@RequestMapping(value = "/risultato", method = RequestMethod.POST)
-	public ModelAndView inserisciNumeri(@RequestParam("numero1") int num1, @RequestParam("numero2") int num2, @RequestParam("azione") String azione, Model model) {
+	public ModelAndView inserisciNumeri(@RequestParam("numero1") int num1, @RequestParam("numero2") int num2, @RequestParam("metodo") String metodo, Model model) {
 
 		GestioneOperazioni gestione = new GestioneOperazioni();
 		
-		if ("somma".equals(azione)) {
+		if ("somma".equals(metodo)) {
 			model.addAttribute("somma", gestione.somma(num1, num2));
 		}
 		
-		if ("sottrazione".equals(azione)) {
+		if ("sottrazione".equals(metodo)) {
 			model.addAttribute("sottrazione", gestione.sottrazione(num1, num2));
 		}
 		
-		if ("moltiplicazione".equals(azione)) {
+		if ("moltiplicazione".equals(metodo)) {
 			model.addAttribute("somma", gestione.somma(num1, num2));
 		}
 		
-		if ("divisione".equals(azione)) {
+		if ("divisione".equals(metodo)) {
 			model.addAttribute("divisione", gestione.divisione(num1, num2));
 		}
 				
