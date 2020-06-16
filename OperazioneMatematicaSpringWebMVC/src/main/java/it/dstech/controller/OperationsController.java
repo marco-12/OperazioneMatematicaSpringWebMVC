@@ -12,28 +12,28 @@ import org.springframework.web.servlet.ModelAndView;
 public class OperationsController {
 	
 	@RequestMapping(value = "/inserisciNumeri", method = RequestMethod.POST)
-	public ModelAndView scelta(@RequestParam("metodo") String metodo, Model model) {
-		return new ModelAndView("inserisciNumeri", "metodo", metodo);
+	public ModelAndView scelta(@RequestParam("scelta") String scelta, Model model) {
+		return new ModelAndView("inserisciNumeri", "scelta", scelta);
 	}
 	
 	@RequestMapping(value = "/risultato", method = RequestMethod.POST)
-	public ModelAndView inserisciNumeri(@RequestParam("numero1") int num1, @RequestParam("numero2") int num2, @RequestParam("metodo") String metodo, Model model) {
+	public ModelAndView inserisciNumeri(@RequestParam("numero1") int num1, @RequestParam("numero2") int num2, @RequestParam("scelta") String scelta, Model model) {
 
 		GestioneOperazioni gestione = new GestioneOperazioni();
 		
-		if ("somma".equals(metodo)) {
+		if ("somma".equals(scelta)) {
 			model.addAttribute("somma", gestione.somma(num1, num2));
 		}
 		
-		if ("sottrazione".equals(metodo)) {
+		if ("sottrazione".equals(scelta)) {
 			model.addAttribute("sottrazione", gestione.sottrazione(num1, num2));
 		}
 		
-		if ("moltiplicazione".equals(metodo)) {
+		if ("moltiplicazione".equals(scelta)) {
 			model.addAttribute("somma", gestione.somma(num1, num2));
 		}
 		
-		if ("divisione".equals(metodo)) {
+		if ("divisione".equals(scelta)) {
 			model.addAttribute("divisione", gestione.divisione(num1, num2));
 		}
 				

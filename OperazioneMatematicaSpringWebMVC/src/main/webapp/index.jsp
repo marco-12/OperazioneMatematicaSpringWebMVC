@@ -15,7 +15,7 @@
 
 
 	<form action="inserisciNumeri" method="post">
-		<select size="1" class="select" style="width: 25%" name="metodo"
+		<select size="1" class="select" style="width: 25%" name="scelta"
 			id="nome">
 
 			<option value="somma">Somma</option>
