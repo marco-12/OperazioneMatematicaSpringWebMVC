@@ -12,8 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class OperationsController {
 	
 	@RequestMapping(value = "/inserisciNumeri", method = RequestMethod.POST)
-	public ModelAndView scelta(@RequestParam("azione") String azione, Model model) {
-		return new ModelAndView("inserisciNumeri", "azione", azione);
+	public ModelAndView scelta(@RequestParam("metodo") String metodo, Model model) {
+		return new ModelAndView("inserisciNumeri", "metodo", metodo);
 	}
 	
 	@RequestMapping(value = "/risultato", method = RequestMethod.POST)
