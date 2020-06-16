@@ -10,11 +10,11 @@ public class GestioneOperazioni {
 		return num1-num2;
 	}
 	
-	public int motiplicazione(int num1, int num2) {		
+	public double motiplicazione(int num1, int num2) {		
 		return num1*num2;
 	}
 	
-	public int divisione(int num1, int num2) {		
+	public double divisione(int num1, int num2) {		
 		return num1/num2;
 	}
 

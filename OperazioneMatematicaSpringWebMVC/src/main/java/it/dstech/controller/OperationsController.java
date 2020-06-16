@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class OperationsController {
 	
 	@RequestMapping(value = "/inserisciNumeri", method = RequestMethod.POST)
-	public ModelAndView raddoppio(@RequestParam("azione") String azione, Model model) {
+	public ModelAndView scelta(@RequestParam("azione") String azione, Model model) {
 		return new ModelAndView("inserisciNumeri", "azione", azione);
 	}
 	
@@ -21,19 +21,19 @@ public class OperationsController {
 
 		GestioneOperazioni gestione = new GestioneOperazioni();
 		
-		if (azione.equals("somma")) {
+		if ("somma".equals(azione)) {
 			model.addAttribute("somma", gestione.somma(num1, num2));
 		}
 		
-		if (azione.equals("sottrazione")) {
+		if ("sottrazione".equals(azione)) {
 			model.addAttribute("sottrazione", gestione.sottrazione(num1, num2));
 		}
 		
-		if (azione.equals("moltiplicazione")) {
+		if ("moltiplicazione".equals(azione)) {
 			model.addAttribute("somma", gestione.somma(num1, num2));
 		}
 		
-		if (azione.equals("divisione")) {
+		if ("divisione".equals(azione)) {
 			model.addAttribute("divisione", gestione.divisione(num1, num2));
 		}
 				
